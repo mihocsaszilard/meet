@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/mihocsaszilard/meet/static/css/main.a617e044.chunk.css",
+    "main.js": "/mihocsaszilard/meet/static/js/main.756f2922.chunk.js",
+    "main.js.map": "/mihocsaszilard/meet/static/js/main.756f2922.chunk.js.map",
+    "runtime-main.js": "/mihocsaszilard/meet/static/js/runtime-main.e3d15f98.js",
+    "runtime-main.js.map": "/mihocsaszilard/meet/static/js/runtime-main.e3d15f98.js.map",
+    "static/js/2.bab6c448.chunk.js": "/mihocsaszilard/meet/static/js/2.bab6c448.chunk.js",
+    "static/js/2.bab6c448.chunk.js.map": "/mihocsaszilard/meet/static/js/2.bab6c448.chunk.js.map",
+    "static/js/3.4a418ac2.chunk.js": "/mihocsaszilard/meet/static/js/3.4a418ac2.chunk.js",
+    "static/js/3.4a418ac2.chunk.js.map": "/mihocsaszilard/meet/static/js/3.4a418ac2.chunk.js.map",
+    "index.html": "/mihocsaszilard/meet/index.html",
+    "service-worker.js": "/mihocsaszilard/meet/service-worker.js",
+    "service-worker.js.map": "/mihocsaszilard/meet/service-worker.js.map",
+    "static/css/main.a617e044.chunk.css.map": "/mihocsaszilard/meet/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.bab6c448.chunk.js.LICENSE.txt": "/mihocsaszilard/meet/static/js/2.bab6c448.chunk.js.LICENSE.txt",
+    "static/media/logo.103b5fa1.svg": "/mihocsaszilard/meet/static/media/logo.103b5fa1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e3d15f98.js",
+    "static/js/2.bab6c448.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.756f2922.chunk.js"
+  ]
+}
