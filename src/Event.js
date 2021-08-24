@@ -13,16 +13,16 @@ Details = () => {
 
 
   render() {
-    const event = this.props.event;
+    const { event: { location, summary, description, start }} = this.props;
     return (
       <div className="event">
         <ul>
-          <li className="location">{event.location}</li>
-          <li className="summary">{event.summary}</li>
-          <li className="date">{event.start.dateTime}</li>
-          <li className="timezone">{event.start.timeZone}</li>
+          <li className="location">{location}</li>
+          <li className="summary">{summary}</li>
+          <li className="date">{start.dateTime}</li>
+          <li className="timezone">{start.timeZone}</li>
           {this.state.showMore === true && (
-            <p className="description">{event.description}
+            <p className="description">{description}
               <button className="lessDetails" onClick={() => this.Details()}>Less details</button>   
             </p>
           )}
