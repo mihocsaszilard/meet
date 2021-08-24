@@ -1,30 +1,34 @@
 import React from "react";
 import { shallow } from "enzyme";
 import Event from "./../Event";
+import { mockData } from "../mock-data";
 
 describe('<Event /> component', () => {
   let EventWrapper;
   beforeAll(() => {
-    EventWrapper = shallow(<Event />)
+    EventWrapper = shallow(<Event event={mockData[0]} />)
   });
 
-  test('event exists', () => {
-    expect(EventWrapper.find(Event)).toHaveLength(1);
+  beforeEach(() => {
+    EventWrapper.setState({ showMore : false });
+  })
+
+  test('detect show MORE button', () => {
+    expect(EventWrapper.find('.moreDetails')).toHaveLength(1);
   });
 
-  test('detect button', () => {
-    expect(EventWrapper.find('button')).toHaveLength(2);
-  });
-
-  test('details are collapsed, on click expands', () => {
-    const toggle = EventWrapper.state({ showMore: true})
-    EventWrapper.find('.moreDetails').simulate('click', toggle);
-    expect(EventWrapper.state('showMore')).toBeFalsy();
+  test('detect show LESS button', () => {
+    EventWrapper.setState({ showMore : true });
+    expect(EventWrapper.find('.lessDetails')).toHaveLength(1);
   });
 
   test('details are expanded, on click collapses', () => {
-    const toggle = EventWrapper.state({ showMore: false})
-    EventWrapper.find('.lessDetails').simulate('click', toggle);
+    const toggle = EventWrapper.state({ showMore: true })
+    EventWrapper.find('.moreDetails').simulate('click', toggle);
     expect(EventWrapper.state('showMore')).toBeTruthy();
+  });
+
+  test('details are collapsed on default', () => {
+    expect(EventWrapper.state('showMore')).toBeFalsy();
   });
 });

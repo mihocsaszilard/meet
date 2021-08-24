@@ -5,24 +5,31 @@ class Event extends Component {
     showMore: false,
   }
 
-ShowMore = () => {
-  this.setState((showMore) => ({
-     showMore: !showMore
+Details = () => {
+  this.setState((prevState) => ({
+     showMore: !prevState.showMore
   }));
 }
 
-ShowLess = () => {
-  this.setState((showMore) => ({
-     showMore: showMore
-  }));
-}
 
   render() {
+    const event = this.props.event;
     return (
       <div className="event">
-        <Event />
-        <button className="moreDetails" onClick={() => this.ShowMore()}></button>
-        <button className="lessDetails" onClick={() => this.ShowLess()}></button>
+        <ul>
+          <li className="location">{event.location}</li>
+          <li className="summary">{event.summary}</li>
+          <li className="date">{event.start.dateTime}</li>
+          <li className="timezone">{event.start.timeZone}</li>
+          {this.state.showMore === true && (
+            <p className="description">{event.description}
+              <button className="lessDetails" onClick={() => this.Details()}>Less details</button>   
+            </p>
+          )}
+          {this.state.showMore === false && (
+            <button className="moreDetails" onClick={() => this.Details()}>More details</button>
+          )}
+        </ul>
       </div>
     ) 
   }
