@@ -57,6 +57,7 @@ componentWillUnmount() {
     const { numberOfEvents, locations, events } = this.state;
     return (
       <div className="App">
+        <div className="navbar"></div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <EventList events={events}/>
         <NumberOfEvents numberOfEvents={numberOfEvents} updateEventCount={this.updateEventCount}/>

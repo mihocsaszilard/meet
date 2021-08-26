@@ -43,7 +43,7 @@ timeFromDate(date) {
           {this.state.showMore === false && (
             <button className="moreDetails details-btn" onClick={() => this.Details()}>More details</button>
           )}
-          <a href={htmlLink} alt="attend event (redirects to google calendar)"><button className="attend-btn">Add to calendar</button></a>
+          <a href={htmlLink} alt="attend event (redirects to google calendar)"><button className="attend-btn">Attend</button></a>
         </ul>
       </div>
     ) 

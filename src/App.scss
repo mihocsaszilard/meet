@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;0,700;1,300&display=swap);
 
 $primary-font: 'Rubik';
-$darkGrey: lighten(rgb(0, 0, 0), 20%);
+$darkGrey: lighten(rgb(3, 4, 20), 20%);
 $lightGrey: lighten(rgb(0, 0, 0), 75%);
-$almostWhite: darken(rgb(255, 255, 255), 10%);
+$almostWhite:rgb(253, 253, 255);
 
 @mixin darkTheme($darkTheme: $darkGrey) {
   background: $almostWhite;
@@ -13,13 +13,16 @@ $almostWhite: darken(rgb(255, 255, 255), 10%);
   border-radius: 5px;
 }
 
+body {
+  background-color: rgb(6, 12, 26);
+}
+
 .App {
   font-family: $primary-font;
   text-align: center;
   padding: 2% 5%;
   width: 80%;
-  margin: auto;
-  
+  margin: 20px auto auto;
 }
 
 .App * {
@@ -56,6 +59,7 @@ input[type="number"] {
 
 .city {
   width: 250px;
+  margin-top: 30px;
 }
 
 .CitySearch {
@@ -64,7 +68,6 @@ input[type="number"] {
   flex-basis: 300px;
   max-width: 300px;
   margin: auto;
-  position: relative;
 }
 
 .suggestions {
@@ -74,7 +77,8 @@ input[type="number"] {
   z-index: 2;
   align-self: center;
   margin: 0;
-  top: 43px;
+  margin-top: -5px;
+  top: 130px;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
@@ -99,26 +103,40 @@ input[type="number"] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 25px;
+  margin-top: 50px;
+}
+
+.EventList .listItem {
+  transition: .5s;
+  &:hover:nth-child(even) {
+    z-index: 999;
+    box-shadow: 0 0 10px darken($lightGrey, 25%);
+    transform: scale(1.1) translate3d(-25px, 10px, 12px);
+  }
+  &:hover:nth-child(odd) {
+    z-index: 999;
+    box-shadow: 0 0 10px darken($lightGrey, 25%);
+    transform: scale(1.1) translate3d(25px, 10px, 12px);
+  }
 }
 
 .event {
   @include darkTheme;
   padding: 10px 10px 35px;
-  margin-bottom: 10px;
   text-align: left;
   position: relative;
   transition: .4s;
-  &:hover {
-    box-shadow: 0 0 10px darken($lightGrey, 25%);
-  }
+  
+  min-height: 200px;
 }
 
 .details-btn,
 .attend-btn {
   font-family: $primary-font;
   position: absolute;
-  left: 53.5%;
-  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 150px;
   padding: 5px 8px;
   border-radius: 4px;
   border: none;
@@ -131,7 +149,9 @@ input[type="number"] {
 }
 
 .attend-btn {
-  left: 34.2%;
+  position: absolute;
+  left: 10%;
+  margin: 0;
   background-color: rgb(138, 231, 125);
 }
 
@@ -264,7 +284,14 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-
+.navbar {
+  @include darkTheme;
+  position: fixed;
+  transform: translateX(-12%);
+  top: 0;
+  width: 130%;
+  height: 65px;
+}
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
@@ -282,5 +309,25 @@ input[type="number"] {
   .EventList {
     grid-template-columns: 1fr;
     grid-gap: 15px;
+  }
+
+  .city {
+    width: 250px;
+    margin-top: 50px;
+  }
+
+  .suggestions {
+    top: 143px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .summary {
+    font-size: 30px;
+  }
+
+  .attend-btn {
+    position: absolute;
+    left: 12%;
   }
 }
