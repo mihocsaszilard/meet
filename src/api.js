@@ -41,11 +41,11 @@ const extractLocations = (events) => {
 const getEvents = async () => {
     
 
-  // error: cannot read property 'start' of undefined - if isn't commented out 
-  // if (window.location.href.startsWith('http://localhost')) {
-  //   
-  //    return mockData;
-  //  }
+  //error: cannot read property 'start' of undefined - if isn't commented out 
+  if (window.location.href.startsWith('http://localhost')) {
+    
+     return mockData;
+   }
 
   const token = await getAccessToken();
 

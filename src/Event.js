@@ -12,23 +12,35 @@ Details = () => {
   }));
 }
 
+convertDate(date) {
+  const newDate = new Date(date).toString().slice(3, 21);
+  return newDate;
+}
+
+timeFromDate(date) {
+  const newDate = new Date(date).toString().slice(15, 21);
+  return newDate;
+}
 
   render() {
-    const { event: { location, summary, description, start }} = this.props;
+    const { event: { location, summary, description, start, end }} = this.props;
     return (
       <div className="event">
         <ul>
           <li className="location">{location}</li>
           <li className="summary">{summary}</li>
-          <li className="date">{start.dateTime}</li>
-          <li className="timezone">{start.timeZone}</li>
+          <li className="date">
+            {this.convertDate(start.dateTime) + ' -' + this.timeFromDate(end.dateTime)}
+          </li>
+          <li>{}</li>
+          <li className="timezone">{start.timeZone} timezone</li>
           {this.state.showMore === true && (
             <p className="description">{description}
-              <button className="lessDetails" onClick={() => this.Details()}>Less details</button>   
+              <button className="lessDetails details-btn" onClick={() => this.Details()}>Less details</button>   
             </p>
           )}
           {this.state.showMore === false && (
-            <button className="moreDetails" onClick={() => this.Details()}>More details</button>
+            <button className="moreDetails details-btn" onClick={() => this.Details()}>More details</button>
           )}
         </ul>
       </div>
