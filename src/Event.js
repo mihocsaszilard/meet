@@ -23,7 +23,7 @@ timeFromDate(date) {
 }
 
   render() {
-    const { event: { location, summary, description, start, end }} = this.props;
+    const { event: { location, summary, description, start, end, htmlLink }} = this.props;
     return (
       <div className="event">
         <ul>
@@ -33,6 +33,7 @@ timeFromDate(date) {
             {this.convertDate(start.dateTime) + ' -' + this.timeFromDate(end.dateTime)}
           </li>
           <li>{}</li>
+          
           <li className="timezone">{start.timeZone} timezone</li>
           {this.state.showMore === true && (
             <p className="description">{description}
@@ -42,6 +43,7 @@ timeFromDate(date) {
           {this.state.showMore === false && (
             <button className="moreDetails details-btn" onClick={() => this.Details()}>More details</button>
           )}
+          <a href={htmlLink} alt="attend event (redirects to google calendar)"><button className="attend-btn">Attend</button></a>
         </ul>
       </div>
     ) 
