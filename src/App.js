@@ -13,18 +13,23 @@ class App extends Component {
  state = {
    events: [],
    locations: [],
-   numberOfEvents: 8,
-   currentLocation: undefined
+   numberOfEvents: 32,
+   currentLocation: 'all'
  }
 
  componentDidMount() {
   this.mounted = true;
   getEvents().then((events) => {
     if (this.mounted) {
-    this.setState({ events: events.slice(0, this.state.numberOfEvents),
-                    locations: extractLocations(events) });
+    this.setState({ 
+      events: events.slice(0, this.state.numberOfEvents),
+      locations: extractLocations(events) 
+      });
      }
-   });
+   })
+   .catch(error => {
+    console.log(error);
+  })
 }
 
 componentWillUnmount() {
@@ -46,10 +51,10 @@ componentWillUnmount() {
  }
 
  updateEventCount = (eventCount) => {
-   const { currentLocation } = this.state;
    this.setState({
      numberOfEvents: eventCount
    });
+   const { currentLocation } = this.state;
    this.updateEvents(currentLocation, eventCount);
  };
 
@@ -60,7 +65,7 @@ componentWillUnmount() {
         <div className="navbar"></div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <EventList events={events}/>
-        <NumberOfEvents numberOfEvents={numberOfEvents} updateEventCount={this.updateEventCount}/>
+        <NumberOfEvents updateEventCount={(e) => this.updateEventCount(e)} numberOfEvents={numberOfEvents} />
       </div>
     );
   }
