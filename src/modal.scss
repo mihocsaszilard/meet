@@ -1,0 +1,101 @@
+$primary-font: 'Rubik';
+$darkGrey: lighten(rgb(3, 4, 20), 20%);
+$lightGrey: lighten(rgb(0, 0, 0), 75%);
+$almostWhite:rgb(253, 253, 255);
+$bgColor: rgb(6, 12, 26);
+
+@mixin darkTheme($darkTheme: $darkGrey) {
+  background: $almostWhite;
+  box-shadow: 0 0 10px darken($lightGrey, 10%);
+  color: $darkGrey;
+  border: 1px $darkGrey;
+  border-radius: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 20px;
+  .modal-btn:hover{
+    box-shadow: 0 0 7px $almostWhite;
+  }
+}
+.details-btn,
+.attend-btn {
+  font-family: $primary-font;
+  position: relative;
+  margin: 10px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .2s;
+  &:hover {
+    box-shadow: 0 0 5px darken($lightGrey, 25%);
+  }
+}
+
+.attend-btn {
+  background-color: rgb(162, 241, 131);
+}
+
+.close-btn {
+  background-color: rgb(223, 82, 82);
+}
+
+.modal-main {
+  z-index: 9999;
+  position:fixed;
+  width: 100vw;
+  height: auto;
+  padding: 200px;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-container {
+  height: 70%;
+  margin: 100px;
+  margin-bottom: 0;
+  margin-top: 0;
+  background-color: $bgColor;
+  box-shadow: 0 0 100px 150px $bgColor;
+  border: 1px solid lighten($bgColor, 3%);
+}
+
+.modal-description {
+  color: $almostWhite;
+  width: 90%;
+  min-height: 250px;
+  padding: 50px;
+  font-size: 20px;
+  font-weight: 300;
+  margin: auto;
+ 
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .modal-container {
+    margin: 0;
+  }
+  .modal-main {
+    padding: 10px;
+    padding-top: 30px;
+    margin: 0;
+  }
+  .modal-description {
+    margin: auto;
+  }
+}

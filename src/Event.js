@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import Modal from "./modal";
 
 class Event extends Component {
   state = {
-    showMore: false,
     event: {},
+    show: false,
   }
 
 Details = () => {
@@ -11,6 +12,14 @@ Details = () => {
      showMore: !prevState.showMore
   }));
 }
+
+showModal = () => {
+  this.setState({ show: true });
+};
+
+hideModal = () => {
+  this.setState({ show: false });
+};
 
 convertDate(date) {
   const newDate = new Date(date).toString().slice(3, 21);
@@ -23,9 +32,10 @@ timeFromDate(date) {
 }
 
   render() {
-    const { event: { location, summary, description, start, end, htmlLink }} = this.props;
+    const { event: { location, description, htmlLink, summary, start, end }} = this.props;
     return (
       <div className="event">
+         <div className="details-overview">
         <ul>
           <li className="location">{location}</li>
           <li className="summary">{summary}</li>
@@ -35,16 +45,12 @@ timeFromDate(date) {
           <li>{}</li>
           
           <li className="timezone">{start.timeZone} timezone</li>
-          {this.state.showMore === true && (
-            <p className="description">{description}
-              <button className="lessDetails details-btn" onClick={() => this.Details()}>Less details</button>   
-            </p>
-          )}
-          {this.state.showMore === false && (
-            <button className="moreDetails details-btn" onClick={() => this.Details()}>More details</button>
-          )}
-          <a href={htmlLink} alt="attend event (redirects to google calendar)"><button className="attend-btn">Attend</button></a>
-        </ul>
+          </ul>
+           <Modal 
+            description={description} htmlLink={htmlLink}
+            show={this.state.show} handleClose={this.hideModal} />   
+          <button className="details-btn open-btn" onClick={this.showModal}>More details</button>
+          </div>
       </div>
     ) 
   }

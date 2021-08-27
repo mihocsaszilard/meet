@@ -1,19 +1,22 @@
 import React, { Component } from "react";
 
 import Event from "./Event";
+import Modal from "./modal";
 
 class EventList extends Component {
-  render() {
-    
+  render() {    
     return (
+      <div className="modal-container">
       <ul className="EventList">
         {this.props.events.map(event => 
           <li className="listItem" key={event.id}>
-            <Event event={event} />
+            <Event event={event} />           
           </li>
-        )}
+        )} 
       </ul>
-    );
+      <Modal />
+    </div>
+    );    
   }
 }
 

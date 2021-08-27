@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import Event from "./../Event";
 import { mockData } from "../mock-data";
+import Modal from "../modal";
 
 describe('<Event /> component', () => {
   let EventWrapper;
@@ -10,25 +11,31 @@ describe('<Event /> component', () => {
   });
 
   beforeEach(() => {
-    EventWrapper.setState({ showMore : false });
-  })
+    EventWrapper.setState({ show : false });
+  });
+
+  test('render list of events', () => {
+    expect(EventWrapper.find(Modal)).toHaveLength(1);
+  });
 
   test('detect show MORE button', () => {
-    expect(EventWrapper.find('.moreDetails')).toHaveLength(1);
+    expect(EventWrapper.find('.moreDetails')).toHaveLength(0);
   });
 
   test('detect show LESS button', () => {
-    EventWrapper.setState({ showMore : true });
-    expect(EventWrapper.find('.lessDetails')).toHaveLength(1);
+    EventWrapper.setState({ show : true });
+    expect(EventWrapper.find('.details-btn')).toEqual({});
   });
 
   test('details are expanded, on click collapses', () => {
-    const toggle = EventWrapper.state({ showMore: true })
-    EventWrapper.find('.moreDetails').simulate('click', toggle);
-    expect(EventWrapper.state('showMore')).toBeTruthy();
+    const toggle = EventWrapper.state({ show: true })
+    EventWrapper.find('.details-btn').simulate('click', toggle);
+    expect(EventWrapper.state('show')).toBeTruthy();
   });
 
-  test('details are collapsed on default', () => {
-    expect(EventWrapper.state('showMore')).toBeFalsy();
+  test('details are collapsed, on click expands', () => {
+    const toggle = EventWrapper.state({ show: false })
+    EventWrapper.find('.details-btn').simulate('click', toggle);
+    expect(EventWrapper.state('show')).toBeTruthy();
   });
 });
