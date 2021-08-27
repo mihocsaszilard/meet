@@ -66,6 +66,14 @@ componentWillUnmount() {
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <EventList events={events}/>
         <NumberOfEvents updateEventCount={(e) => this.updateEventCount(e)} numberOfEvents={numberOfEvents} />
+        <div className="shapes">
+          <div className="shapes shape1"><div className="circle"></div></div>
+          <div className="shapes shape2"><div className="circle"></div></div>
+          <div className="shapes shape3"><div className="circle"></div></div>
+          <div className="shapes shape4"><div className="circle"></div></div>
+          <div className="shapes shape5"><div className="circle"></div></div>
+          <div className="shapes shape6"><div className="circle"></div></div>
+        </div>
       </div>
     );
   }

@@ -271,6 +271,69 @@ input[type="number"] {
   z-index: 999;
 }
 
+.shapes {
+  height: 50px;
+  width: 50px;
+  .shape1,
+  .shape2,
+  .shape3,
+  .shape4,
+  .shape5,
+  .shape6 {
+    position: fixed;
+    border-radius: 56% 44% 100% 0% / 100% 44% 56% 0%;
+    background-color: $almostWhite;
+    animation: slide 2s ease-in-out alternate infinite;
+  }
+  .shape1 {
+    left: 5%;
+    top: 10%;
+    animation-delay: -2s;    
+  }
+  .shape2 {
+    left: 9%;
+    top: 30%;
+    animation-delay: -7s;
+  }
+  .shape3 {
+    left: 2%;
+    top: 65%;
+    animation-delay: -4s;
+  }
+  .shape4 {
+    left: 95%;
+    top: 15%;
+    animation-delay: -2.5s;
+  }
+  .shape5 {
+    left: 91%;
+    top: 75%;
+    animation-delay: -9s;
+  }
+  .shape6 {
+    left: 88%;
+    top: 39%;
+    animation-delay: -4s;
+  }
+  .circle {
+    background-color: lighten($bgColor, 10%);
+    height: 30px;
+    width: 30px;
+    transform: translate(13px, 6.5px);
+    border-radius: 50%;
+  }
+}
+
+@keyframes slide {
+  0% {
+            transform: scale(.8) rotate(-45deg);
+  }
+  100% {
+            transform: scale(1.2) rotate(-40deg);
+            background-color: rgb(238, 109, 109);
+  }
+}
+
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
     flex-direction: row;
