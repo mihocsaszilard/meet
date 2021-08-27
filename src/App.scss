@@ -284,6 +284,8 @@ input[type="number"] {
     border-radius: 56% 44% 100% 0% / 100% 44% 56% 0%;
     background-color: $almostWhite;
     animation: slide 2s ease-in-out alternate infinite;
+    z-index: -1;
+    opacity: 0.5;
   }
   .shape1 {
     left: 5%;
