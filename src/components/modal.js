@@ -1,4 +1,4 @@
-import './modal.scss';
+import './../scss/modal.scss';
 
 const Modal = ({ handleClose, show, description, htmlLink }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";

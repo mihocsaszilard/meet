@@ -1,6 +1,6 @@
 import { mockData } from "./mock-data";
-// import { NProgress } from "nprogress";
 import axios from "axios";
+import NProgress from "nprogress";
 
 
 const removeQuery = () => {
@@ -39,10 +39,10 @@ const extractLocations = (events) => {
 };
 
 const getEvents = async () => {
-  // NProgress.start(); //Cannot read property 'start' of undefined 
+  NProgress.start(); //Cannot read property 'start' of undefined 
 
   if (window.location.href.startsWith('http://localhost')) {
-    // NProgress.done();
+    NProgress.done();
      return mockData;
    }
 
@@ -57,7 +57,7 @@ const getEvents = async () => {
       localStorage.setItem("lastEvents", JSON.stringify(result.data));
       localStorage.setItem("locations", JSON.stringify(locations));
     }
-    // NProgress.done();
+    NProgress.done();
     return result.data.events;
   }
 };

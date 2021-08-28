@@ -6,11 +6,19 @@ $lightGrey: lighten(rgb(0, 0, 0), 75%);
 $almostWhite:rgb(253, 253, 255);
 $bgColor: rgb(6, 12, 26);
 
-@mixin darkTheme($darkTheme: $darkGrey) {
+@mixin lightTheme($darkTheme: $darkGrey) {
   background: $almostWhite;
   box-shadow: 0 0 10px darken($lightGrey, 10%);
   color: $darkGrey;
   border: 1px $darkGrey;
+  border-radius: 5px;
+}
+
+@mixin darkTheme($lightTheme: $bgColor) {
+  background: lighten($bgColor, 15%);
+  box-shadow: 0 0 10px lighten($bgColor, 20%);
+  color: $almostWhite;
+  border: 1px $almostWhite;
   border-radius: 5px;
 }
 
@@ -79,7 +87,7 @@ input[type="number"] {
   align-self: center;
   margin: 0;
   margin-top: -5px;
-  top: 143px;
+  top: 115px;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
@@ -166,6 +174,7 @@ input[type="number"] {
 .date,
 .timezone {
   margin-left: 10px;
+  color: lighten($bgColor, 80%);
 }
 
 .open-btn {

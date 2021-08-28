@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './App.scss';
+import './scss/App.scss';
 
-import EventList from './EventList';
-import CitySearch from './CitySearch';
-import NumberOfEvents from './NumberOfEvents';
-import { extractLocations, getEvents } from './api';
+import EventList from './components/EventList';
+import CitySearch from './components/CitySearch';
+import NumberOfEvents from './components/NumberOfEvents';
+import { extractLocations, getEvents } from './components/api';
 
-import './nprogress.css';
+import './scss/nprogress.scss';
 
 class App extends Component {
 
