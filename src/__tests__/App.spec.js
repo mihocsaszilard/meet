@@ -4,7 +4,7 @@ import App from '../App';
 
 import EventList from '../components/EventList';
 import CitySearch from '../components/CitySearch';
-import { mockData } from '../components';
+import { mockData } from '../components/mock-data';
 import { extractLocations, getEvents } from '../components/api'
 
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Event from "./../Event";
-import { mockData } from "../mock-data";
-import Modal from "../modal";
+import Event from "../components/Event";
+import { mockData } from "../components/mock-data";
+import Modal from "../components/modal";
 
 describe('<Event /> component', () => {
   let EventWrapper;
