@@ -18,7 +18,6 @@ defineFeature(feature, test => {
     });
 
     when('the elements are collapsed', () => {
-      AppWrapper = mount(<App />);
       const modal = AppWrapper.find('.modal');
       expect(modal.find('.display-none')).toHaveLength(1); //contains display-none class => invisible
     });
@@ -39,7 +38,7 @@ defineFeature(feature, test => {
       EventWrapper.find('.open-btn').simulate('click');
     });
 
-    then('the element expands and the user can see the event details', async () => {
+    then('the element expands and the user can see the event details', () => {
       expect(EventWrapper.find('.modal')).toHaveLength(1);
     });
   });

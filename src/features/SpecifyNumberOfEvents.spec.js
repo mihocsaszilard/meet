@@ -20,7 +20,7 @@ defineFeature(feature, test => {
 
     then('there are 32 elements by default', () => {
      AppWrapper.update();
-     expect(AppWrapper.state('numberOfEvents')).toEqual(32);
+     expect((AppWrapper.find('.event')).length).toBeLessThanOrEqual(32); //the mockData has less than 32 elements
     });
   });
 
@@ -30,12 +30,12 @@ defineFeature(feature, test => {
     });
 
     when('the user specifies the number of events', () => {
-      AppWrapper.find('.eventNumber').simulate('change', { target: { value: 2 }});
+      AppWrapper.find('.eventNumber').simulate('change', { target: { value: 3 }});
     });
 
     then('there will be a specified number of elements', () => {
       AppWrapper.update();
-      expect(AppWrapper.find('.listItem')).toHaveLength(2);
+      expect(AppWrapper.find('.listItem')).toHaveLength(3);
     });
   });
 });
