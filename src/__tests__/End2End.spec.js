@@ -49,3 +49,28 @@ describe('show/hide an event details', () => {
     expect(className).toBe('modal display-none'); //if the element has the display-none class => not visible
   });
 });
+
+//Bonus 
+describe('Filter events by city', () => {
+  let browser;
+  let page;
+  
+  beforeAll(async () => {
+    jest.setTimeout(15000);
+    browser = await puppeteer.launch(
+      // {
+      //   headless: false,
+      //   slowMo: 250,
+      //   args: ['--start-fullscreen'],
+      // }
+    );
+    page = await browser.newPage();
+    await page.setViewport({ width: 1920, height: 1080 });
+    await page.goto('http://localhost:3000/');
+    await page.waitForSelector('.modal');
+  });
+
+  afterAll(() => {
+    browser.close();
+  });
+});
