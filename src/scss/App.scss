@@ -178,8 +178,9 @@ input[type="number"] {
 }
 
 .open-btn {
+  background-color: $almostWhite;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-60%);
   height: 30px;
   width: auto;
   &:hover {
