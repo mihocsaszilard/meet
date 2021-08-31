@@ -1,0 +1,14 @@
+<svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+ <title>meetme</title>
+
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_19" stroke="null">
+   <path fill="#ce0008" d="m106.21597,39.20703l0,65.23921l-90.68511,-65.23921l90.68511,0z" id="svg_18" stroke-width="0" stroke="#000"/>
+   <path fill="#ce0008" d="m135.56753,37.39521l0,70.67468l-121.12376,-70.67468l121.12376,0z" id="svg_6" stroke-width="0" stroke="#000"/>
+   <path fill="#ab0009" d="m136.09307,112.7786l-111.86525,0l111.86525,-75.52062l0,75.52062z" id="svg_3" stroke-width="0" stroke="#000"/>
+   <path fill="#8c0004" d="m14.39777,112.71133l0,-75.44896l121.75809,75.44896l-121.75809,0z" id="svg_4" stroke-width="0" stroke="#000"/>
+   <text fill="#ffffff" stroke-width="0" x="12.71488" y="80.92043" id="svg_8" font-size="24" font-family="'Montserrat'" text-anchor="start" xml:space="preserve" font-weight="normal" font-style="normal" transform="matrix(5.40742 0 0 4.67073 -62.246 -270.168)" stroke="#000">m</text>
+  </g>
+ </g>
+</svg>

@@ -69,7 +69,14 @@ componentWillUnmount() {
     const { numberOfEvents, locations, events } = this.state;
     return (
       <div className="App">
-        <div className="navbar"></div>
+        <div className="navbar">
+          <button className="logo"
+            type="button"
+            onClick={(e) => {
+            e.preventDefault();
+            window.location.href='https://mihocsaszilard.github.io/meet/';
+          }}/>
+        </div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <EventList events={events}/>
         <NumberOfEvents updateEventCount={(e) => this.updateEventCount(e)} numberOfEvents={numberOfEvents} />

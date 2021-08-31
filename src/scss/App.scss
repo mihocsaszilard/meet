@@ -75,6 +75,8 @@ input[type="number"] {
   margin: auto;
   position: fixed;
   top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 999;
 }
 
@@ -298,11 +300,23 @@ input[type="number"] {
 .navbar {
   @include darkTheme;
   position: fixed;
-  transform: translateX(-12%);
+  transform: translateX(-10%);
   top: 0;
-  width: 130%;
+  width: 100%;
   height: 65px;
   z-index: 999;
+  .logo {
+    cursor: pointer;
+    position: inherit;
+    background-image: url(../img/meetme.svg);
+    background-color: transparent;
+    border: none;
+    height: 100px;
+    width: 200px;
+    background-repeat: no-repeat;
+    top: -50%;
+    left: 10%;
+  }
 }
 
 .shapes {
@@ -382,12 +396,23 @@ input[type="number"] {
   }
 }
 
+@media only screen and (max-width: 992px) {
+  .CitySearch {
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+  }
+  
+  .App {
+    margin-top: 80px;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .EventList {
     grid-template-columns: 1fr;
     grid-gap: 15px;
   }
-
 }
 
 @media only screen and (max-width: 500px) {
@@ -405,8 +430,8 @@ input[type="number"] {
     height: 40px;
   }
 
-  .CitySearch {
+  .logo {
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(22%);
   }
 }
