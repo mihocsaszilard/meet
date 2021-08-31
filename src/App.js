@@ -58,6 +58,13 @@ componentWillUnmount() {
    this.updateEvents(currentLocation, eventCount);
  };
 
+ toTop = () => {
+  window.scrollTo ({
+    top: 0,
+    behavior: 'smooth',
+  });
+ };
+
   render() {
     const { numberOfEvents, locations, events } = this.state;
     return (
@@ -74,6 +81,7 @@ componentWillUnmount() {
           <div className="shapes shape5"><div className="circle"></div></div>
           <div className="shapes shape6"><div className="circle"></div></div>
         </div>
+        <button className="to-top" onClick={this.toTop} />
       </div>
     );
   }

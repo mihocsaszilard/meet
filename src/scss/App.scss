@@ -29,9 +29,8 @@ body {
 .App {
   font-family: $primary-font;
   text-align: center;
-  
   width: 80%;
-  margin: 20px auto auto;
+  margin: 30px auto auto;
 }
 
 .App * {
@@ -72,11 +71,11 @@ input[type="number"] {
 }
 
 .CitySearch {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 300px;
   max-width: 300px;
   margin: auto;
+  position: fixed;
+  top: -38px;
+  z-index: 999;
 }
 
 .suggestions {
@@ -185,6 +184,27 @@ input[type="number"] {
   width: auto;
   &:hover {
     box-shadow: 0 0 5px $bgColor;
+  }
+}
+
+.to-top {
+  font-family: inherit;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  border-radius: 50%;
+  background-color: $almostWhite;
+  background-image: url(../img/top.svg);
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50px;
+  width: 50px;
+  box-shadow: none;
+  &:hover {
+    box-shadow: 0 0 5px $almostWhite;
   }
 }
 
@@ -378,5 +398,15 @@ input[type="number"] {
   .attend-btn {
     position: absolute;
     left: 12%;
+  }
+
+  .to-top {
+    width: 40px;
+    height: 40px;
+  }
+
+  .CitySearch {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
