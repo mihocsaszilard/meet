@@ -50,7 +50,7 @@ testing-library/jest-dom - testing-library/react - testing-library/user-event - 
 <h4>Gherkin syntax</h4>
 
 <h3>1. Filter events by city</h3>
-*As a user I should be able to filter events by city So that I can see the list of events that take place in that city*
+_As a user I should be able to filter events by city So that I can see the list of events that take place in that city_
 
 <h4>SCENARIO 1:</h4> - When user hasn't searched for a city, show upcoming events from all cities.<br><br>
 
@@ -65,7 +65,7 @@ testing-library/jest-dom - testing-library/react - testing-library/user-event - 
 **Given** the user was typing “Berlin” in the city textbox <br>**And** the list of suggested cities is showing<br> **When** the user selects a city (e.g., “Berlin, Germany”) from the list <br>**Then** their city should be changed to that city (i.e., “Berlin, Germany”)<br>**And** the user should receive a list of upcoming events in that city
 
 <h3>2. Show / Hide event details</h3>
-*As a user I should be able to expand event details So that I can view more information about a specific event*
+_As a user I should be able to expand event details So that I can view more information about a specific event_
 
 <h4>SCENARIO 1: </h4> - An event element is collapsed by default<br><br>
 
@@ -80,7 +80,7 @@ testing-library/jest-dom - testing-library/react - testing-library/user-event - 
 **Given** the user has expanded an events details <br>**When** the user selects "collaps" or "close" <br>**Then** the expanded element will collapse, hiding the details of the element
 
 <h3>3. Specify Number of Events</h3>
-*As a user I should be able to view a specific number of events per page So that I can adjust my page for screen size and load time*
+_As a user I should be able to view a specific number of events per page So that I can adjust my page for screen size and load time_
 
 <h4>SCENARIO 1:</h4> - When user hasn’t specified a number, 32 is the default number<br><br>
 
@@ -91,7 +91,7 @@ testing-library/jest-dom - testing-library/react - testing-library/user-event - 
 **Given** the events have loaded <br>**When** a user has specified a number (i.e. 5) for the amount of events to view <br>**Then** only the specified number (5) of events should load
 
 <h3>4. Use the App Offline</h3>
-*As a user I should be able to use the app offline So that I can view event information without having to connect to the internet/use data*
+_As a user I should be able to use the app offline So that I can view event information without having to connect to the internet/use data_
 
 <h4>SCENARIO 1:</h4> - Show cached data when there’s no internet connection<br><br>
 
@@ -102,7 +102,7 @@ testing-library/jest-dom - testing-library/react - testing-library/user-event - 
 **Given** the app has cached data<br> **When** a user changes settings <br>**Then** an error should inform them that it requires an internet connection to load new data
 
 <h3>5. Data Visualization</h3>
-*As a user I should be able to view the number of events by city So that I can visualize data about where events are taking place*
+_As a user I should be able to view the number of events by city So that I can visualize data about where events are taking place_
 
 <h4>SCENARIO 1:</h4> - Show a chart with the number of upcoming events in each city<br><br>
 
