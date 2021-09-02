@@ -33,7 +33,7 @@ class InfoAlert extends Alert {
   constructor(props) {
     super(props);
     this.color = '#4285f4';
-    this.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    this.backgroundColor = 'rgba(0, 0, 0, 0.9)';
     this.height = '33px';
     this.marginTop = '0';
   }
@@ -42,15 +42,15 @@ class InfoAlert extends Alert {
 class ErrorAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = 'red';
-    this.fontSize = '18px';
+    this.color = 'orange';
+    this.fontSize = '16px';
   }
 }
 
 class WarningAlert extends Alert {
   constructor(props) {
     super(props);
-    this.color = 'orange';
+    this.color = 'red';
     this.fontSize = '16px';
   }
 }

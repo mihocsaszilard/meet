@@ -77,7 +77,7 @@ componentWillUnmount() {
         </div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <EventList events={events}/>
-        <NumberOfEvents updateEventCount={(e) => this.updateEventCount(e)} numberOfEvents={numberOfEvents} />
+        
         <div className="shapes">
           <div className="shapes shape1"><div className="circle"></div></div>
           <div className="shapes shape2"><div className="circle"></div></div>
@@ -87,6 +87,9 @@ componentWillUnmount() {
           <div className="shapes shape6"><div className="circle"></div></div>
         </div>
         <button className="to-top" onClick={this.toTop} />
+        <div className="footer">
+          <NumberOfEvents updateEventCount={(e) => this.updateEventCount(e)} numberOfEvents={numberOfEvents} />
+        </div>
       </div>
     );
   }

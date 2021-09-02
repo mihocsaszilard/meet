@@ -100,7 +100,7 @@ input[type="number"] {
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   cursor: default;
 }
 
@@ -198,7 +198,7 @@ input[type="number"] {
   font-family: inherit;
   cursor: pointer;
   position: fixed;
-  bottom: 20px;
+  bottom: 65px;
   right: 20px;
   border: none;
   border-radius: 50%;
@@ -215,13 +215,30 @@ input[type="number"] {
   }
 }
 
-.resultNr {
-  color: $almostWhite;
+.footer {
+  padding: 0 5%;
+  width: 100%;
+  transform: translateX(-10%);
+  position: fixed;
+  bottom: 0;
+  background-color: $bgColor;
+  margin: auto;
 }
 
-.number-of-events input {
-  width: 100px;
-  margin: 10px auto;
+.number-of-events {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  input {
+  width: 50px;
+  margin: 10px;
+  }
+  .resultNr {
+    color: $almostWhite;
+    margin: auto 0;
+  }
 }
 
 .button-wrapper {
@@ -406,6 +423,10 @@ input[type="number"] {
     left: 50%;
     top: 30px;
     transform: translateX(-50%);
+  }
+
+  .navbar {
+    box-shadow: 0 65px 0 $bgColor;
   }
   
   .App {
