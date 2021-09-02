@@ -7,6 +7,25 @@ Calendar API to fetch upcoming events.</h4>
 ![image](https://user-images.githubusercontent.com/62619507/131874570-cb112833-3521-4fa9-98d3-c16587f0e1a4.png)
 ![image](https://user-images.githubusercontent.com/62619507/131874715-b70a344a-2334-4ff8-af7f-3ce3d0e9d8c4.png)
 
+In the project directory, you can run:
+
+```npm start```
+Runs the app in the development mode.
+Open **http://localhost:3000** to view it in the browser.
+
+The page will reload if you make edits.
+You will also see any lint errors in the console.
+
+```npm test```
+Launches the test runner in the interactive watch mode.
+
+```npm run build```
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
+
 
 <h2>Features and Requirements</h2>
 <ul>
