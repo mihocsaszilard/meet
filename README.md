@@ -35,13 +35,16 @@ mobile.</li>
 <li> The app must implement an alert system using an OOP approach to show information to the
 user.</li>
 <li> The app must make use of data visualization (recharts preferred).</li>
-<li><li>The app must be covered by tests with a coverage rate >= 90%.</li>
+<li>The app must be covered by tests with a coverage rate >= 90%.</li>
 <li> The app must be monitored using an online monitoring tool.</li>
 </ul>
 
 <h2>Dependencies</h2>
 testing-library/jest-dom - testing-library/react - testing-library/user-event - atatus-spa - axios - moment - nprogress - react - react-dom - react-scripts - recharts - web-vitals - workbox-background-sync - workbox-broadcast-update - workbox-cacheable-response - workbox-core - workbox-expiration - workbox-google-analytics - workbox-navigation-preload - workbox-precaching - workbox-range-requests - workbox-routing - workbox-strategies - workbox-streams
+<br>
+<h3>DevDependencies</h3>
 
+@wojtekmaj/enzyme-adapter-react-17 - enzyme - jest-cucumber - puppeteer
 
 <h2></h2>
 
