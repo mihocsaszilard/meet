@@ -75,7 +75,9 @@ $bgColor: rgb(6, 12, 26);
   font-size: 20px;
   font-weight: 300;
   margin: auto;
- 
+  h3 {
+    font-size: 26px;
+  }
 }
 
 .display-block {
@@ -97,5 +99,11 @@ $bgColor: rgb(6, 12, 26);
   }
   .modal-description {
     margin: auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .close-btn {
+    margin-left: 50px;
   }
 }

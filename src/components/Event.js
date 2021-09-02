@@ -47,7 +47,7 @@ timeFromDate(date) {
           <li className="timezone">{start.timeZone} timezone</li>
           </ul>
            <Modal 
-            description={description} htmlLink={htmlLink}
+            description={description} htmlLink={htmlLink} summary={summary}
             show={this.state.show} handleClose={this.hideModal} />   
           <button className="details-btn open-btn" onClick={this.showModal}>More details</button>
           </div>
