@@ -6,13 +6,13 @@ Calendar API to fetch upcoming events.</h4>
 
 <h2>Features and Requirements</h2>
 <ul>
-● Filter events by city.
-● Show/hide event details.
-● Specify number of events.
-● Use the app when offline.
-● Add an app shortcut to the home screen.
-● View a chart showing the number of upcoming events by city
-  </ul>
+<li>Filter events by city.<li>
+<li>Show/hide event details.<li>
+<li>Specify number of events.<li>
+<li>Use the app when offline.<li>
+<li>Add an app shortcut to the home screen.<li>
+<li>View a chart showing the number of upcoming events by city<li>
+</ul>
 
 <h2>Technical Requirements</h2>
 
