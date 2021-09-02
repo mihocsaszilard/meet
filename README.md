@@ -50,11 +50,11 @@ testing-library/jest-dom - testing-library/react - testing-library/user-event - 
 <h4>Gherkin syntax</h4>
 
 <h3>1. Filter events by city</h3>
-_As a user I should be able to filter events by city So that I can see the list of events that take place in that city_
+As a user I should be able to filter events by city So that I can see the list of events that take place in that city
 
 <h4>SCENARIO 1:</h4> - When user hasn't searched for a city, show upcoming events from all cities.<br><br>
 
-**Given** user hasn’t searched for any city<br> **When** the user opens the app <br>**Then** the user should see a list of all upcoming events<br>
+*Given* user hasn’t searched for any city<br> *When* the user opens the app <br>*Then* the user should see a list of all upcoming events<br>
 
 <h4>SCENARIO 2: </h4> - User should see a list of suggestions when they seach for a city.<br><br>
 
