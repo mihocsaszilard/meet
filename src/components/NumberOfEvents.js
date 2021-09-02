@@ -8,10 +8,10 @@ class NumberOfEvents extends Component {
   }
 
   updateEventCount = (eventCount) => {
-    if(eventCount <= 0) {
+    if(eventCount < 1 || eventCount > 32) {
     return this.setState({
       numberOfEvents: 0,
-      errorText: 'Please enter a valid number'
+      errorText: 'Please select a number between 1-32'
     });
   } else {
     this.setState({
