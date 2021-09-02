@@ -444,6 +444,7 @@ input[type="number"] {
 @media only screen and (max-width: 500px) {
   .summary {
     font-size: 30px;
+    min-height: 100px;
   }
 
   .attend-btn {
