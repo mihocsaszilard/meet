@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import './scss/App.scss';
-
 import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
 import { extractLocations, getEvents } from './components/api';
 
+import './scss/App.scss';
 import './scss/nprogress.scss';
 
 class App extends Component {
@@ -39,8 +38,7 @@ componentWillUnmount() {
  updateEvents = (location, eventCount) => {
    getEvents().then((events) => {
      let locationEvents = (location === 'all') ? 
-     events
-     : 
+     events : 
     events.filter((event) => event.location === location);
     locationEvents = locationEvents.slice(0, eventCount)
      this.setState({
