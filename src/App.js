@@ -78,7 +78,7 @@ componentWillUnmount() {
             window.location.href='https://mihocsaszilard.github.io/meet/';
           }}/>
           
-         { !navigator.onLine ? <WarningAlert text={this.state.warningText} style={{display: 'block'}} /> : <WarningAlert style={{display: 'none'}} />}
+         { !navigator.onLine ? <WarningAlert text={this.state.warningText} style={{display: 'block'}} /> : <WarningAlert text={''} style={{display: 'none'}} />}
 
         </div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
