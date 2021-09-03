@@ -15,7 +15,6 @@ class App extends Component {
    locations: [],
    numberOfEvents: 32,
    currentLocation: 'all',
-   warningText: 'You are offline!',
  }
 
  componentDidMount() {
@@ -78,7 +77,7 @@ componentWillUnmount() {
             window.location.href='https://mihocsaszilard.github.io/meet/';
           }}/>
           
-         { !navigator.onLine ? <WarningAlert text={this.state.warningText} style={{display: 'block'}} /> : <WarningAlert text={' '} />}
+         { !navigator.onLine ? <WarningAlert text={'You are offline!'} /> : <WarningAlert text={'Online'} />}
 
         </div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
