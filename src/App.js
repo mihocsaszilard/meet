@@ -77,7 +77,7 @@ componentWillUnmount() {
             window.location.href='https://mihocsaszilard.github.io/meet/';
           }}/>
           
-         { navigator.onLine ? (<WarningAlert text='You are offline!' />) : (<WarningAlert text=' ' />)}
+         { !navigator.onLine ? (<WarningAlert text='You are offline!' />) : (<WarningAlert text=' ' />)}
 
         </div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
