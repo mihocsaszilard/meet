@@ -64,14 +64,6 @@ componentWillUnmount() {
   });
  };
 
- isOfflie = () => {
-  if(!navigator.onLine){
-    return true;
-  } else {
-    return false;
-  }
- };
-
   render() {
     const { numberOfEvents, locations, events } = this.state;
     
@@ -85,7 +77,7 @@ componentWillUnmount() {
             window.location.href='https://mihocsaszilard.github.io/meet/';
           }}/>
           
-         { this.isOfflie ? <WarningAlert text={'off'}/> : <WarningAlert text={'on'}/>}
+         { !navigator.onLine ? (<WarningAlert text={'You are offline!'} />) : (<WarningAlert text={' '} />)}
 
         </div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
