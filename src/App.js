@@ -3,6 +3,7 @@ import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
 import { extractLocations, getEvents } from './components/api';
+import { WarningAlert } from './components/Alert';
 
 import './scss/App.scss';
 import './scss/nprogress.scss';
@@ -13,7 +14,8 @@ class App extends Component {
    events: [],
    locations: [],
    numberOfEvents: 32,
-   currentLocation: 'all'
+   currentLocation: 'all',
+   warningText: 'You are offline!',
  }
 
  componentDidMount() {
@@ -65,6 +67,7 @@ componentWillUnmount() {
 
   render() {
     const { numberOfEvents, locations, events } = this.state;
+    
     return (
       <div className="App">
         <div className="navbar">
@@ -74,10 +77,13 @@ componentWillUnmount() {
             e.preventDefault();
             window.location.href='https://mihocsaszilard.github.io/meet/';
           }}/>
+          
+         { !navigator.onLine ? <WarningAlert text={this.state.warningText}/> : '' }
+
         </div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <EventList events={events}/>
-        
+                
         <div className="shapes">
           <div className="shapes shape1"><div className="circle"></div></div>
           <div className="shapes shape2"><div className="circle"></div></div>
