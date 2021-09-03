@@ -39,7 +39,7 @@ const extractLocations = (events) => {
 };
 
 const getEvents = async () => {
-  NProgress.start(); //Cannot read property 'start' of undefined 
+  NProgress.start(); 
 
   if (window.location.href.startsWith('http://localhost')) {
     NProgress.done();
