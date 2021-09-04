@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import Event from "./Event";
-import Modal from "./modal";
+import Event from "./Event.jsx";
+import Modal from "./modal.jsx";
 
 class EventList extends Component {
   render() {    

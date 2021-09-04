@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Modal from "./modal";
+import Modal from "./modal.jsx";
 
 class Event extends Component {
   state = {
