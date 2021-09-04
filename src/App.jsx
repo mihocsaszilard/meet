@@ -71,10 +71,12 @@ componentWillUnmount() {
   render() {
     const { numberOfEvents, locations, events } = this.state;
     
-    if (this.state.showWelcomeScreen === undefined) return <div className="App" />
+    if (this.state.showWelcomeScreen === undefined) 
+    return <div className="App" />
+
     return (
       <div className="App">
-        <div className="navbar">
+        <div className="navbar  display-none">
           <button className="logo"
             type="button"
             onClick={(e) => {
