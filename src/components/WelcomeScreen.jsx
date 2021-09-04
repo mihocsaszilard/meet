@@ -21,7 +21,7 @@ function WelcomeScreen(props) {
           </button>
         </div>
       </div>
-      <a className="policy" href="https://YOUR_GITHUB_USERNAME.github.io/meet/privacy.html" rel="nofollow noopener" > Privacy policy </a>
+      <a className="policy" href="https://mihocsaszilard.github.io/meet/privacy.html" rel="nofollow noopener" > Privacy policy </a>
 
       <div className="shapes">
           <div className="shapes shape7"><div className="circle"></div></div>
