@@ -2,7 +2,7 @@ $primary-font: 'Rubik', sans-serif;
 $darkGrey: lighten(rgb(3, 4, 20), 20%);
 $lightGrey: lighten(rgb(0, 0, 0), 75%);
 $almostWhite:rgb(253, 253, 255);
-$bgColor: rgb(6, 12, 26);
+$bgColor: #060c1a;
 
 
 .WelcomeScreen {
@@ -14,6 +14,7 @@ $bgColor: rgb(6, 12, 26);
   width: 100%;
   transform: translateX(-10%);
   height: 100%;
+  padding : 5%;
   top: 0;
   background: transparent;
   color: $almostWhite;
@@ -126,5 +127,17 @@ $bgColor: rgb(6, 12, 26);
     left: 73%;
     top: 87%;
     animation-delay: -5s;
+  }
+}
+
+@media screen and ( max-width: 500px ){
+  .WelcomeScreen {
+    h1 {
+      font-size: 40px;
+    }
+    
+    img {
+      height: 42px;
+    }
   }
 }
