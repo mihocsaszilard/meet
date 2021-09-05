@@ -12,7 +12,7 @@ const Modal = ({ handleClose, show, summary, description, htmlLink }) => {
             {description}
           </div>
           <div className="button-container">
-            <a href={htmlLink} alt="redirects to calendar"> 
+            <a href={{htmlLink}} alt="redirects to calendar"> 
               <button className="attend-btn modal-btn">Add to calendar</button>
             </a>
             <button className="details-btn close-btn modal-btn" type="button" onClick={handleClose}>
