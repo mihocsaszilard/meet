@@ -76,7 +76,7 @@ componentWillUnmount() {
 
     return (
       <div className="App">
-        <div className="navbar  display-none">
+        <div className="navbar">
           <button className="logo"
             type="button"
             onClick={(e) => {
