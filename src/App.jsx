@@ -81,7 +81,7 @@ componentWillUnmount() {
             type="button"
             onClick={(e) => {
             e.preventDefault();
-            window.location.href='https://mihocsaszilard.github.io/meet/';
+            window.location.href=<a href="https://mihocsaszilard.github.io/meet/" alt="redirects to homepage"> </a>;
           }}/>
           
          { !navigator.onLine ? (<WarningAlert text='You are offline!' />) : (<WarningAlert text=' ' />)}
