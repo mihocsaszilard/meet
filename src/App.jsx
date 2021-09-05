@@ -73,7 +73,7 @@ componentWillUnmount() {
     
     if (this.state.showWelcomeScreen === undefined) 
     return <div className="App" />
-
+    
     return (
       <div className="App">
         <div className="navbar">
