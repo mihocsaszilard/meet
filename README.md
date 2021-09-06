@@ -4,12 +4,14 @@
 test-driven development (TDD) technique. The application uses the Google
 Calendar API to fetch upcoming events.</h4>
 
-<div>
-<p>Main view after Login, here users can search events from different cities, users can define the number of search results and show or hide a chart which shows the number of events in each citiy. </p>
-<img src="https://user-images.githubusercontent.com/62619507/131874570-cb112833-3521-4fa9-98d3-c16587f0e1a4.png" width="49%" height="49%" style="float: left">
-</div>
 
-<img src="https://user-images.githubusercontent.com/62619507/131874715-b70a344a-2334-4ff8-af7f-3ce3d0e9d8c4.png" width="49%" height="49%">
+<p>Main view: <br> After Login, here users can search events from different cities, users can define the number of search results and show or hide a chart which shows the number of events in each citiy. </p>
+
+<img src="https://user-images.githubusercontent.com/62619507/131874570-cb112833-3521-4fa9-98d3-c16587f0e1a4.png">
+
+<p>Open modal: <br> If users clicks on 'More details' button a modal is opening and shows more details about the event. </p>
+
+<img src="https://user-images.githubusercontent.com/62619507/131874715-b70a344a-2334-4ff8-af7f-3ce3d0e9d8c4.png">
 
 In the project directory, you can run:
 
