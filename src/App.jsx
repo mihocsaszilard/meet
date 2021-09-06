@@ -5,6 +5,7 @@ import NumberOfEvents from './components/NumberOfEvents.jsx';
 import { extractLocations, getEvents, checkToken, getAccessToken } from './components/api';
 import { WarningAlert } from './components/Alert.jsx';
 import WelcomeScreen from './components/WelcomeScreen.jsx';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 import './scss/App.scss';
 import './scss/nprogress.scss';
@@ -17,56 +18,65 @@ class App extends Component {
    numberOfEvents: 32,
    currentLocation: 'all',
    showWelcomeScreen: undefined,
- }
+  }
 
-async componentDidMount() {
-  this.mounted = true;
-  const accessToken = localStorage.getItem('access_token');
-  const isTokenValid = (await checkToken(accessToken)).error ? false : true;
-  const searchParams = new URLSearchParams(window.location.search);
-  const code = searchParams.get("code");
-  this.setState({ showWelcomeScreen: !(code || isTokenValid) });
-  if ((code || isTokenValid) && this.mounted) {
-    getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({ events, locations: extractLocations(events) });
-      }
-    });
-  } 
-}
+  async componentDidMount() {
+    this.mounted = true;
+    const accessToken = localStorage.getItem('access_token');
+    const isTokenValid = (await checkToken(accessToken)).error ? false : true;
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = searchParams.get("code");
+    this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+    if ((code || isTokenValid) && this.mounted) {
+      getEvents().then((events) => {
+        if (this.mounted) {
+          this.setState({ events, locations: extractLocations(events) });
+        }
+      });
+    } 
+  }
   
+  componentWillUnmount() {
+    this.mounted = false;
+  }
 
-componentWillUnmount() {
-  this.mounted = false;
-}
+  updateEvents = (location, eventCount) => {
+    getEvents().then((events) => {
+      let locationEvents = (location === 'all') ? 
+      events : 
+      events.filter((event) => event.location === location);
+      locationEvents = locationEvents.slice(0, eventCount)
+      this.setState({
+        events: locationEvents,
+        currentLocation: location
+      });
+    });
+  }
 
- updateEvents = (location, eventCount) => {
-   getEvents().then((events) => {
-     let locationEvents = (location === 'all') ? 
-     events : 
-    events.filter((event) => event.location === location);
-    locationEvents = locationEvents.slice(0, eventCount)
-     this.setState({
-       events: locationEvents,
-       currentLocation: location
-     });
-   });
- }
+  updateEventCount = (eventCount) => {
+    this.setState({
+      numberOfEvents: eventCount
+    });
+    const { currentLocation } = this.state;
+    this.updateEvents(currentLocation, eventCount);
+  };
 
- updateEventCount = (eventCount) => {
-   this.setState({
-     numberOfEvents: eventCount
-   });
-   const { currentLocation } = this.state;
-   this.updateEvents(currentLocation, eventCount);
- };
+  toTop = () => {
+    window.scrollTo ({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
- toTop = () => {
-  window.scrollTo ({
-    top: 0,
-    behavior: 'smooth',
-  });
- };
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map ((location) => {
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(', ').shift()
+      return { city, number };
+    });
+    return data;
+  };
 
   render() {
     const { numberOfEvents, locations, events } = this.state;
@@ -88,6 +98,17 @@ componentWillUnmount() {
 
         </div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
+        <ResponsiveContainer height={400}>
+          <ScatterChart width={800} height={400}
+            margin={{ top: 50, right: 20, bottom: 20, left: 20 }}>
+            <CartesianGrid />
+            <XAxis type="category" dataKey="city" name="city" />
+            <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
+            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+            <Scatter data={this.getData()} fill="#fff" />
+            <Legend verticalAlign="top" height={36} />
+          </ScatterChart>
+        </ResponsiveContainer>
         <EventList events={events}/>
                 
         <div className="shapes">
