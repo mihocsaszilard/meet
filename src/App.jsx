@@ -5,7 +5,7 @@ import NumberOfEvents from './components/NumberOfEvents.jsx';
 import { extractLocations, getEvents, checkToken, getAccessToken } from './components/api';
 import { WarningAlert } from './components/Alert.jsx';
 import WelcomeScreen from './components/WelcomeScreen.jsx';
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Line, ResponsiveContainer } from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 import './scss/App.scss';
 import './scss/nprogress.scss';
@@ -72,8 +72,8 @@ class App extends Component {
     const { locations, events } = this.state;
     const data = locations.map ((location) => {
       const number = events.filter((event) => event.location === location).length
-      const city = location.split(', ').shift()
-      return { city, number };
+      const cities = location.split(', ').shift()
+      return { cities, number };
     });
     return data;
   };
@@ -102,12 +102,10 @@ class App extends Component {
           <ScatterChart width={800} height={400}
             margin={{ top: 50, right: 20, bottom: 20, left: 20 }}>
             <CartesianGrid />
-            <XAxis type="category" dataKey="city" name="city" />
+            <XAxis type="category" dataKey="cities" name="cities" />
             <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
             <Scatter data={this.getData()} fill="#fff" />
-            <Legend verticalAlign="bottom" height={36} />
-            <Line name="Number of events/city" type="monotone" dataKey="number" stroke="#8884d8" />
           </ScatterChart>
         </ResponsiveContainer>
         <EventList events={events}/>
