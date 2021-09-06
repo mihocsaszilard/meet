@@ -289,8 +289,12 @@ input[type="number"] {
   }
   .Alert {
     position: fixed;
-    top: 20px;
-    right: 10px;
+    top: 70px;
+    right: 40px;
+    background-color: rgba(189, 0, 0, 0.514);
+    border-radius: 20px;
+    padding: 1px 5px;
+    border: 1px solid red;
   }
 }
 
@@ -401,6 +405,11 @@ input[type="number"] {
 
   .navbar {
     box-shadow: 0 65px 0 $bgColor;
+    .Alert {
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
   
   .App {
