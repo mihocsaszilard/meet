@@ -119,13 +119,13 @@ class App extends Component {
                 onClick={() => {this.expandCollapse()}}>{this.state.statsBtnText} stats
         </button>
         <ResponsiveContainer height={chartHeight} >
-          <ScatterChart width={1000} height={chartHeight} 
+          <ScatterChart width={1100} height={chartHeight} 
             margin={{ top: 20, right: 40, bottom: 10, left: -20 }}>
             <CartesianGrid />
             <XAxis type="category" dataKey="cities" name="cities" />
             <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter data={this.getData()} fill="#a10512" />
+            <Scatter data={this.getData()} fill="#e0a500" />
           </ScatterChart>
         </ResponsiveContainer>
         </div>
