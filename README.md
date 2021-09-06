@@ -4,8 +4,8 @@
 test-driven development (TDD) technique. The application uses the Google
 Calendar API to fetch upcoming events.</h4>
 
-![image](https://user-images.githubusercontent.com/62619507/131874570-cb112833-3521-4fa9-98d3-c16587f0e1a4.png){:height="49%" width="49%"}
-![image](https://user-images.githubusercontent.com/62619507/131874715-b70a344a-2334-4ff8-af7f-3ce3d0e9d8c4.png){:height="49%" width="49%"}
+<img src="https://user-images.githubusercontent.com/62619507/131874570-cb112833-3521-4fa9-98d3-c16587f0e1a4.png" width="49%" height="49%">
+<img src="https://user-images.githubusercontent.com/62619507/131874715-b70a344a-2334-4ff8-af7f-3ce3d0e9d8c4.png" width="49%" height="49%">
 
 In the project directory, you can run:
 
