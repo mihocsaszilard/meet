@@ -98,9 +98,10 @@ class App extends Component {
 
         </div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
+
         <ResponsiveContainer height={400}>
-          <ScatterChart width={800} height={400}
-            margin={{ top: 50, right: 20, bottom: 20, left: 20 }}>
+          <ScatterChart width={1000} height={400}
+            margin={{ top: 50, right: 10, bottom: 10, left: 10 }}>
             <CartesianGrid />
             <XAxis type="category" dataKey="cities" name="cities" />
             <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
