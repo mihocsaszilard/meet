@@ -6,6 +6,7 @@ import { extractLocations, getEvents, checkToken, getAccessToken } from './compo
 import { WarningAlert } from './components/Alert.jsx';
 import WelcomeScreen from './components/WelcomeScreen.jsx';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+// import EventGenre from './components/EventGenre.jsx';
 
 import './scss/App.scss';
 import './scss/nprogress.scss';
@@ -20,6 +21,7 @@ class App extends Component {
    showWelcomeScreen: undefined,
    chartHeight: 0,
    statsBtnText: 'Show',
+   pieChart: 'block',
   }
 
   async componentDidMount() {
@@ -109,7 +111,7 @@ class App extends Component {
             window.location.href="https://mihocsaszilard.github.io/meet/";
           }}/>
           
-         { navigator.onLine ? (<WarningAlert text='You are offline!' />) : (<WarningAlert text=' ' />)}
+         { !navigator.onLine ? (<WarningAlert text='You are offline!' />) : (<WarningAlert text={null} />)}
 
         </div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
@@ -118,6 +120,7 @@ class App extends Component {
         <button className="details-btn"
                 onClick={() => {this.expandCollapse()}}>{this.state.statsBtnText} stats
         </button>
+        
         <ResponsiveContainer height={chartHeight} >
           <ScatterChart width={1100} height={chartHeight} 
             margin={{ top: 20, right: 40, bottom: 10, left: -20 }}>
@@ -128,6 +131,7 @@ class App extends Component {
             <Scatter data={this.getData()} fill="#e0a500" />
           </ScatterChart>
         </ResponsiveContainer>
+        {/* <EventGenre events={events} /> */}
         </div>
 
         <EventList events={events}/>

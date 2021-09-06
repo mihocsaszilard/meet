@@ -292,9 +292,7 @@ input[type="number"] {
     top: 70px;
     right: 40px;
     background-color: rgba(189, 0, 0, 0.514);
-    border-radius: 20px;
-    padding: 1px 5px;
-    border: 1px solid rgb(255, 0, 0);
+    border-radius: 10px;
   }
 }
 
@@ -363,6 +361,7 @@ input[type="number"] {
   position: relative;
   z-index: 999;
   margin-top: 70px;
+  transition: 0.4s;
   button {
     position: fixed;
     top: 10px;
