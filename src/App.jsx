@@ -5,7 +5,7 @@ import NumberOfEvents from './components/NumberOfEvents.jsx';
 import { extractLocations, getEvents, checkToken, getAccessToken } from './components/api';
 import { WarningAlert } from './components/Alert.jsx';
 import WelcomeScreen from './components/WelcomeScreen.jsx';
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Line, ResponsiveContainer } from 'recharts';
 
 import './scss/App.scss';
 import './scss/nprogress.scss';
@@ -106,7 +106,8 @@ class App extends Component {
             <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
             <Scatter data={this.getData()} fill="#fff" />
-            <Legend verticalAlign="top" height={36} />
+            <Legend verticalAlign="bottom" height={36} />
+            <Line name="Number of events/city" type="monotone" dataKey="number" stroke="#8884d8" />
           </ScatterChart>
         </ResponsiveContainer>
         <EventList events={events}/>
