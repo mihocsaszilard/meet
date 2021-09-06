@@ -18,6 +18,8 @@ class App extends Component {
    numberOfEvents: 32,
    currentLocation: 'all',
    showWelcomeScreen: undefined,
+   chartHeight: 0,
+   statsBtnText: 'Show',
   }
 
   async componentDidMount() {
@@ -78,8 +80,21 @@ class App extends Component {
     return data;
   };
 
+  expandCollapse = () => {
+    if (this.state.chartHeight !== 0 )
+    this.setState({
+      chartHeight: 0,
+      statsBtnText: 'Show'
+    });
+    else 
+    this.setState({
+      chartHeight: 500,
+      statsBtnText: 'Hide'
+    });
+  };
+
   render() {
-    const { numberOfEvents, locations, events } = this.state;
+    const { numberOfEvents, locations, events, chartHeight } = this.state;
     
     if (this.state.showWelcomeScreen === undefined) 
     return <div className="App" />
@@ -91,24 +106,30 @@ class App extends Component {
             type="button"
             onClick={(e) => {
             e.preventDefault();
-            window.location.href=<a href="https://mihocsaszilard.github.io/meet/" alt="redirects to homepage"> </a>;
+            window.location.href="https://mihocsaszilard.github.io/meet/";
           }}/>
           
          { !navigator.onLine ? (<WarningAlert text='You are offline!' />) : (<WarningAlert text=' ' />)}
 
         </div>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
-
-        <ResponsiveContainer height={400}>
-          <ScatterChart width={1000} height={400}
-            margin={{ top: 50, right: 10, bottom: 10, left: 10 }}>
+        
+        <div className="chartContainer"> 
+        <button className="details-btn"
+                onClick={() => {this.expandCollapse()}}>{this.state.statsBtnText} stats
+        </button>
+        <ResponsiveContainer height={chartHeight} >
+          <ScatterChart width={1000} height={chartHeight} 
+            margin={{ top: 20, right: 40, bottom: 10, left: -20 }}>
             <CartesianGrid />
             <XAxis type="category" dataKey="cities" name="cities" />
             <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter data={this.getData()} fill="#fff" />
+            <Scatter data={this.getData()} fill="#a10512" />
           </ScatterChart>
         </ResponsiveContainer>
+        </div>
+
         <EventList events={events}/>
                 
         <div className="shapes">

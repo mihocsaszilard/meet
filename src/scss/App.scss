@@ -355,6 +355,21 @@ input[type="number"] {
   }
 }
 
+.chartContainer {
+  position: relative;
+  z-index: 999;
+  margin-top: 70px;
+  button {
+    position: fixed;
+    top: 10px;
+    right: 50px;
+    width: 88px;
+  }
+  .recharts-surface {
+    background-color: lighten($bgColor, 2%);
+  }
+}
+
 @keyframes slide {
   0% {
             transform: scale(.8) rotate(-45deg);
@@ -414,5 +429,13 @@ input[type="number"] {
   .to-top {
     width: 40px;
     height: 40px;
+  }
+
+  .chartContainer {
+    width: 100vw;
+    margin-left: -12.5%;
+    button {
+      right: 30px;
+    }
   }
 }
