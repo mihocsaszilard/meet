@@ -6,7 +6,7 @@ import { extractLocations, getEvents, checkToken, getAccessToken } from './compo
 import { WarningAlert } from './components/Alert.jsx';
 import WelcomeScreen from './components/WelcomeScreen.jsx';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-// import EventGenre from './components/EventGenre.jsx';
+import EventGenre from './components/EventGenre.jsx';
 
 import './scss/App.scss';
 import './scss/nprogress.scss';
@@ -131,7 +131,7 @@ class App extends Component {
             <Scatter data={this.getData()} fill="#e0a500" />
           </ScatterChart>
         </ResponsiveContainer>
-        {/* <EventGenre events={events} /> */}
+        <EventGenre events={events} />
         </div>
 
         <EventList events={events}/>
