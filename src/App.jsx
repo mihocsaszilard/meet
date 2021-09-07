@@ -6,7 +6,7 @@ import { extractLocations, getEvents, checkToken, getAccessToken } from './compo
 import { WarningAlert } from './components/Alert.jsx';
 import WelcomeScreen from './components/WelcomeScreen.jsx';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import EventGenre from './components/EventGenre.jsx';
+import MyPieChart from './components/MyPieChart.jsx';
 
 import './scss/App.scss';
 import './scss/nprogress.scss';
@@ -20,6 +20,7 @@ class App extends Component {
    currentLocation: 'all',
    showWelcomeScreen: undefined,
    chartHeight: 0,
+   pieChartVisibility: 'display-none',
    statsBtnText: 'Show',
    pieChart: 'block',
   }
@@ -83,15 +84,17 @@ class App extends Component {
   };
 
   expandCollapse = () => {
-    if (this.state.chartHeight !== 0 )
+    if (this.state.chartHeight !== 0 && this.pieChartVisibility !== 'display-none')
     this.setState({
       chartHeight: 0,
-      statsBtnText: 'Show'
+      statsBtnText: 'Show',
+      pieChartVisibility: 'display-none'
     });
     else 
     this.setState({
       chartHeight: 500,
-      statsBtnText: 'Hide'
+      statsBtnText: 'Hide',
+      pieChartVisibility: 'display-block'
     });
   };
 
@@ -117,21 +120,23 @@ class App extends Component {
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         
         <div className="chartContainer"> 
-        <button className="details-btn"
-                onClick={() => {this.expandCollapse()}}>{this.state.statsBtnText} stats
-        </button>
-        
-        <ResponsiveContainer height={chartHeight} >
-          <ScatterChart width={1100} height={chartHeight} 
-            margin={{ top: 20, right: 40, bottom: 10, left: -20 }}>
-            <CartesianGrid />
-            <XAxis type="category" dataKey="cities" name="cities" />
-            <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
-            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter data={this.getData()} fill="#e0a500" />
-          </ScatterChart>
-        </ResponsiveContainer>
-        <EventGenre events={events} />
+          <button className="details-btn"
+                  onClick={() => {this.expandCollapse()}}>{this.state.statsBtnText} stats
+          </button>
+      
+          <ResponsiveContainer height={chartHeight} >
+            <ScatterChart width={1100} height={chartHeight} 
+              margin={{ top: 20, right: 40, bottom: 10, left: -20 }}>
+              <CartesianGrid />
+              <XAxis type="category" dataKey="cities" name="cities" />
+              <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false} />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+              <Scatter data={this.getData()} fill="#e0a500" />
+            </ScatterChart>        
+          </ResponsiveContainer>   
+          <div className={this.state.pieChartVisibility}>
+          <MyPieChart events={events} />
+          </div>
         </div>
 
         <EventList events={this.state.events}/>
