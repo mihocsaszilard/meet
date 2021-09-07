@@ -25,6 +25,7 @@ const MyPieChart = ({ events }) => {
         <PieChart width={800} height={450}
                   margin={{ top: 0, right: 100, bottom: 0, left: 100 }}>
           <Pie
+            align="center"
             dataKey="value"
             startAngle={180}
             endAngle={0}
@@ -39,7 +40,7 @@ const MyPieChart = ({ events }) => {
               <Cell key={`cell-${index}`} fill={COLORS[index]} />
             ))}
           </Pie>
-          <Legend align="center" height={45} />
+          <Legend align="center" height={45} value="Event topics" />
         </PieChart>
       </ResponsiveContainer>
     );
