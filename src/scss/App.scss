@@ -361,6 +361,7 @@ input[type="number"] {
 .chartContainer {
   position: relative;
   z-index: 999;
+  margin: auto;
   margin-top: 70px;
   transition: 0.4s;
   button {

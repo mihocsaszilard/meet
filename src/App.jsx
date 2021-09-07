@@ -124,7 +124,7 @@ class App extends Component {
                   onClick={() => {this.expandCollapse()}}>{this.state.statsBtnText} stats
           </button>
       
-          <ResponsiveContainer height={chartHeight} >
+          <ResponsiveContainer height={chartHeight-10} >
             <ScatterChart width={1100} height={chartHeight} 
               margin={{ top: 20, right: 40, bottom: 10, left: -20 }}>
               <CartesianGrid />
