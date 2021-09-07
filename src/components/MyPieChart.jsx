@@ -29,7 +29,7 @@ const MyPieChart = ({ events }) => {
             startAngle={180}
             endAngle={0}
             data={data}
-            cx={200}
+            cx='50%'
             cy={200}
             outerRadius={80}
             fill="#8884d8"
