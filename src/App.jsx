@@ -134,7 +134,7 @@ class App extends Component {
         <EventGenre events={events} />
         </div>
 
-        <EventList events={events}/>
+        <EventList events={this.state.events}/>
                 
         <div className="shapes">
           <div className="shapes shape1"><div className="circle"></div></div>
