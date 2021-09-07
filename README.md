@@ -15,8 +15,7 @@ Calendar API to fetch upcoming events.</h4>
 
 <p>Show statistics: <br> If users clicks on 'Show stats' button a modal is opening and shows statistics about the event and number of events in every city. After clicking on 'Hide stats' button the modal closes. </p>
 
-<img src ="https://user-images.githubusercontent.com/62619507/132352430-0f1fe211-aec6-4687-8899-57a1a89bec88.png">
-
+<img src ="https://user-images.githubusercontent.com/62619507/132352997-16dc1ecb-8cd1-4384-9e33-2c22d1ef5fae.png">
 
 In the project directory, you can run:
 
