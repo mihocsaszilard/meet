@@ -40,7 +40,7 @@ const MyPieChart = ({ events }) => {
               <Cell key={`cell-${index}`} fill={COLORS[index]} />
             ))}
           </Pie>
-          <Legend align="center" height={45} value="Event topics" />
+          <Legend align="center" height={45} />
         </PieChart>
       </ResponsiveContainer>
     );
