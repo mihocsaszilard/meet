@@ -92,7 +92,7 @@ class App extends Component {
     });
     else 
     this.setState({
-      chartHeight: 500,
+      chartHeight: 490,
       statsBtnText: 'Hide',
       pieChartVisibility: 'display-block'
     });
@@ -124,7 +124,7 @@ class App extends Component {
                   onClick={() => {this.expandCollapse()}}>{this.state.statsBtnText} stats
           </button>
       
-          <ResponsiveContainer height={chartHeight-10} >
+          <ResponsiveContainer height={chartHeight} >
             <ScatterChart width={1100} height={chartHeight} 
               margin={{ top: 20, right: 40, bottom: 10, left: -20 }}>
               <CartesianGrid />
