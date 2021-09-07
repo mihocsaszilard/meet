@@ -21,8 +21,8 @@ const MyPieChart = ({ events }) => {
     },[events]);
     
     return (
-      <ResponsiveContainer height={250}>
-        <PieChart width={800} height={350}
+      <ResponsiveContainer width='100%' height={250}>
+        <PieChart width={800} height={450}
                   margin={{ top: 0, right: 100, bottom: 0, left: 100 }}>
           <Pie
             dataKey="value"
