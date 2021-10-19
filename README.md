@@ -175,4 +175,16 @@ testing-library/jest-dom - testing-library/react - testing-library/user-event - 
 **Given** that there are events loaded <br>
 **When** a user goes to the data page <br>
 **Then** a chart with visualized data showing how many events per city should load.
-<h2></h2>
+
+
+<h2>Contact</h2>
+
+[<img align="left" alt="linkedin profile" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/assets/linkedin.svg" />][linkedin]
+[<img align="left" alt="twitter profile" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/assets/twitter.svg" />][twitter]
+[<img align="left" alt="portfolio website" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/assets/website.svg" />][website]
+[<img align="left" alt="send me an email" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/assets/mail.svg" />](mailto:mihocsa48@gmail.com)-> <mihocsa48@gmail.com>
+
+
+[linkedin]: https://www.linkedin.com/in/mihocsaszilard/
+[twitter]: https://twitter.com/MihocsaS
+[website]: https://mihocsaszilard.github.io/Portfolio-Website-CF/
