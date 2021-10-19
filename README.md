@@ -179,10 +179,10 @@ testing-library/jest-dom - testing-library/react - testing-library/user-event - 
 
 <h2>Contact</h2>
 
-[<img align="left" alt="linkedin profile" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/img/linkedin.svg" />][linkedin]
-[<img align="left" alt="twitter profile" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/img/twitter.svg" />][twitter]
-[<img align="left" alt="portfolio website" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/img/website.svg" />][website]
-[<img align="left" alt="send me an email" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/img/mail.svg" />](mailto:mihocsa48@gmail.com)-> <mihocsa48@gmail.com>
+[<img align="left" alt="linkedin profile" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/src/img/linkedin.svg" />][linkedin]
+[<img align="left" alt="twitter profile" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/src/img/twitter.svg" />][twitter]
+[<img align="left" alt="portfolio website" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/src/img/website.svg" />][website]
+[<img align="left" alt="send me an email" width="25px" src="https://github.com/mihocsaszilard/meet/blob/main/src/img/mail.svg" />](mailto:mihocsa48@gmail.com)-> <mihocsa48@gmail.com>
 
 
 [linkedin]: https://www.linkedin.com/in/mihocsaszilard/
